@@ -29,13 +29,18 @@ export class LoginComponent implements OnInit {
   get emails() {
     return this.myForm.controls['emails'] as FormArray;
   }
+  removeEmail(i: number) {
+    if (i !== 0) {
+      this.emails.controls.splice(i, 1);
+    }
+  }
 
   addLesson() {
     const emailForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
+      email: [null, [Validators.required, Validators.email]],
     });
-    (this.myForm.get('emails') as FormArray).push(emailForm)
-    // this.emails.push(emailForm);
+    // (this.myForm.get('emails') as FormArray).push(emailForm)
+    this.emails.push(emailForm);
     // this.emailForm = emailForm;
   }
 

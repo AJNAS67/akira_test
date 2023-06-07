@@ -20,7 +20,7 @@
           <ng-container
             *ngFor="let lessonForm of emails.controls; let i = index"
           >
-            <div [formGroup]="emailForm">
+            <div [formGroupName]="i">
               <mat-form-field class="mat_form_field" appearance="outline">
                 <mat-label>Email</mat-label>
                 <input
@@ -30,6 +30,9 @@
                 />
                 <mat-icon matSuffix (click)="addLesson()"
                   >add_circle_outline</mat-icon
+                >
+                <mat-icon matSuffix (click)="removeEmail(i)"
+                  >remove</mat-icon
                 >
 
                 <mat-error *ngIf="myForm.get('email')?.hasError('required')"
