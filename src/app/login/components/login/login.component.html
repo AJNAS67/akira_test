@@ -1,0 +1,83 @@
+<div class="login-container">
+  <div class="login-form">
+    <form [formGroup]="myForm" class="example-form" (ngSubmit)="onSubmit()">
+      <h1 style="text-align: center">Create your account</h1>
+      <p style="text-align: center">
+        Lets get started with free trial for 30 days.
+      </p>
+      <div>
+        <mat-form-field class="mat_form_field" appearance="outline">
+          <mat-label>Name</mat-label>
+          <input
+            matInput
+            formControlName="name"
+            placeholder="Enter your name"
+          />
+        </mat-form-field>
+
+        <br />
+        <ng-container formArrayName="emails">
+          <ng-container
+            *ngFor="let lessonForm of emails.controls; let i = index"
+          >
+            <div [formGroup]="emailForm">
+              <mat-form-field class="mat_form_field" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input
+                  matInput
+                  formControlName="email"
+                  placeholder="Ex. pat@example.com"
+                />
+                <mat-icon matSuffix (click)="addLesson()"
+                  >add_circle_outline</mat-icon
+                >
+
+                <mat-error *ngIf="myForm.get('email')?.hasError('required')"
+                  >Email is required</mat-error
+                >
+                <mat-error *ngIf="myForm.get('email')?.hasError('email')"
+                  >Invalid email format</mat-error
+                >
+              </mat-form-field>
+
+              <br />
+            </div>
+          </ng-container>
+        </ng-container>
+
+        <br />
+
+        <mat-form-field class="mat_form_field" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="password" />
+          <mat-icon matSuffix>remove_red_eye</mat-icon>
+        </mat-form-field>
+        <br />
+        <p><mat-checkbox>Remember me </mat-checkbox></p>
+        <br />
+        <button
+          style="width: 100%"
+          type="submit"
+          mat-raised-button
+          color="primary"
+          [disabled]="myForm.invalid"
+          class="w-full"
+        >
+          {{ "login" | uppercase }}
+        </button>
+      </div>
+      <div class="view_statics">
+        <p (click)="viewStatistics()">
+          View Statistics
+          <span>
+            <mat-icon
+              aria-label="Example home icon"
+              fontIcon="remove_red_eye"
+            ></mat-icon>
+          </span>
+        </p>
+      </div>
+    </form>
+  </div>
+  <div class="login-image"></div>
+</div>

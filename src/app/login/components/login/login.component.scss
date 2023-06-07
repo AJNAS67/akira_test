@@ -1,0 +1,66 @@
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+}
+
+.mat_form_field {
+  width: 100%;
+}
+
+td {
+  padding-right: 8px;
+}
+.login-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-image {
+  flex: 1;
+  min-width: 300px;
+  height: 90%;
+  background-image: url("/assets/images/login.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  // margin-right: 50px;
+}
+
+.login-form {
+  flex: 1;
+  min-width: 300px;
+  height: 100%;
+  padding: 30px;
+  // background-color: #f0f0f0;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .view_statics {
+    margin-top: 50px;
+
+    float: right;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .login-image,
+  .login-form {
+    flex: none;
+    width: 100%;
+  }
+}
+ion-icon {
+  padding-right: 30px;
+}
