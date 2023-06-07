@@ -6,7 +6,11 @@
   // justify-content: center;
   // align-items: center;
 }
-
+.submit_button {
+  float: right;
+  background: #000000 !important;
+  color: #ffff !important;
+}
 .mat_form_field {
   width: 100%;
 }
@@ -14,7 +18,7 @@
 td {
   padding-right: 8px;
 }
-.login-container {
+.statistics-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -22,22 +26,21 @@ td {
   height: 100vh;
 }
 
-.login-image {
+.statistics-image {
   flex: 1;
   min-width: 300px;
   height: 90%;
-  background-image: url("/assets/images/login.png");
+  // background-image: url("/assets/images/login.png");
   background-size: contain;
   background-repeat: no-repeat;
   // margin-right: 50px;
 }
 
-.login-form {
+.statistics-form {
   flex: 1;
   min-width: 300px;
   height: 100%;
   padding: 30px;
-  // background-color: #f0f0f0;
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -49,13 +52,13 @@ td {
 }
 
 @media screen and (max-width: 768px) {
-  .login-container {
+  .statistics-container {
     flex-direction: column;
     height: auto;
   }
 
-  .login-image,
-  .login-form {
+  .statistics-image,
+  .statistics-form {
     flex: none;
     width: 100%;
   }

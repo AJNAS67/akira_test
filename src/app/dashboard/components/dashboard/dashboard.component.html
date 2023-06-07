@@ -1,0 +1,54 @@
+<div class="statistics-container">
+  <div class="statistics-form">
+    <form
+      [formGroup]="statisticsForm"
+      class="example-form"
+      (ngSubmit)="onSubmit()"
+    >
+      <h1><strong>Statistics</strong></h1>
+
+      <div>
+        <mat-form-field class="mat_form_field" appearance="outline">
+          <mat-label>Chairs</mat-label>
+          <input
+            matInput
+            formControlName="chairs"
+            placeholder="Enter number of Chairs"
+          />
+        </mat-form-field>
+
+        <br />
+
+        <mat-form-field class="mat_form_field" appearance="outline">
+          <mat-label>Table</mat-label>
+          <input
+            matInput
+            formControlName="tables"
+            placeholder="Enter number of tables"
+          />
+        </mat-form-field>
+        <br />
+        <mat-form-field class="mat_form_field" appearance="outline">
+          <mat-label>Lamp</mat-label>
+          <input
+            matInput
+            formControlName="lamps"
+            placeholder="Enter number of lamps"
+          />
+        </mat-form-field>
+        <button
+          style="float: right"
+          type="submit"
+          mat-raised-button
+          [disabled]="statisticsForm.invalid"
+          class="submit_button"
+        >
+          <span>{{ "submit" | uppercase }}</span>
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="statistics-image">
+    <app-piechart [chartData]="statisticsData"></app-piechart>
+  </div>
+</div>
