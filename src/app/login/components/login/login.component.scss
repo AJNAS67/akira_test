@@ -2,9 +2,10 @@
   min-width: 150px;
   max-width: 500px;
   width: 100%;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
+}
+.signButton {
+  background-color: black !important;
+  color: #ffff !important;
 }
 
 .mat_form_field {
@@ -29,7 +30,6 @@ td {
   background-image: url("/assets/images/login.png");
   background-size: contain;
   background-repeat: no-repeat;
-  // margin-right: 50px;
 }
 
 .login-form {
@@ -45,7 +45,12 @@ td {
   .view_statics {
     margin-top: 50px;
     float: right;
+    color: #35979c;
   }
+}
+.icon{
+  margin-bottom: -6px;
+  margin-left: 20px;
 }
 
 @media screen and (max-width: 768px) {

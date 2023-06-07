@@ -2,7 +2,7 @@
   <div class="login-form">
     <form [formGroup]="myForm" class="example-form" (ngSubmit)="onSubmit()">
       <h1 style="text-align: center">Create your account</h1>
-      <p style="text-align: center">
+      <p style="text-align: center; color: #a6a6a6">
         Lets get started with free trial for 30 days.
       </p>
       <div>
@@ -59,11 +59,9 @@
           style="width: 100%"
           type="submit"
           mat-raised-button
-          color="primary"
-          [disabled]="myForm.invalid"
-          class="w-full"
+          class="signButton"
         >
-          {{ "login" | uppercase }}
+          {{ "sign up" | uppercase }}
         </button>
       </div>
       <div class="view_statics">
@@ -71,6 +69,7 @@
           View Statistics
           <span>
             <mat-icon
+              class="icon"
               aria-label="Example home icon"
               fontIcon="remove_red_eye"
             ></mat-icon>

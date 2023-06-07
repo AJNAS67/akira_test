@@ -34,8 +34,9 @@ export class LoginComponent implements OnInit {
     const emailForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
     });
-    this.emails.push(emailForm);
-    this.emailForm = emailForm;
+    (this.myForm.get('emails') as FormArray).push(emailForm)
+    // this.emails.push(emailForm);
+    // this.emailForm = emailForm;
   }
 
   viewStatistics() {
